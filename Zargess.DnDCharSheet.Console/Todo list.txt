@@ -1,0 +1,2 @@
+﻿1. Make function that constructs inventory
+	- Make it so that it can read the content of a file and construct the inventory from that

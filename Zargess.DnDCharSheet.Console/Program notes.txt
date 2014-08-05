@@ -1,0 +1,4 @@
+﻿Coin rules:
+	for constructing price or money list in any way use pattern matching on strings with the form:
+	19p 16g 7e 14s 99c
+	which would be: 19 platin, 16 gold, 7 electrum, 14 silver and 99 copper
