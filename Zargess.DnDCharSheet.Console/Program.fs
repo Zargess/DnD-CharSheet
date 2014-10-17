@@ -20,7 +20,7 @@ let main argv =
     let a = stringToCoins "19p 19g 13s"
 //    printfn "%A" a
     //coinsToString a |> stringToCoins |> printfn "%A"
-    let foo = ItemCreator.readItems @"C:\Users\MFH\Desktop\knownItems.xml"
+    let foo = ItemCreator.readItems @"C:\Users\MFH\Dropbox\Programmering\knownItems.xml"
     foo |> printfn "%A"
     Console.ReadLine() |> ignore
     0 // return an integer exit code

@@ -68,7 +68,7 @@ module ItemCreator =
             let t = a.[0]
             let item = match t with
                        | "Armor" -> constructArmor a
-                       | "Weapon" -> constructWeapon @"c:\users\mfh\desktop\Character.xml" a
+                       | "Weapon" -> constructWeapon @"C:\Users\MFH\Dropbox\Programmering\Character.xml" a
                        | "Ammonition" -> constructAmmonition a
                        | "Other" -> constructOther a
                        | _ -> failwith "Not an item"
