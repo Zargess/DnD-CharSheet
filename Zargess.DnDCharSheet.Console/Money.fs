@@ -17,7 +17,7 @@ let getCoins ls =
         |> List.map (fun x -> string(x)) 
         |> String.concat ""
         |> int
-
+    printfn "%A" amount
     let rec coins t count ls =
         match count with
         | x when x <= 0 -> ls

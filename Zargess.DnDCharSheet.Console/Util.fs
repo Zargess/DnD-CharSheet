@@ -10,12 +10,13 @@ let rec lastElement ls =
     | x::[] -> [x]
     | x::xs -> lastElement xs
 
-let ienumToList (ienum:IEnumerable<_>) =
-    List.ofSeq ienum
+let ienumToList (ienum:IEnumerable<_>) = List.ofSeq ienum
 
 let xName s = XName.Get(s)
 let readFile (path:string) searchedType =
         let xd = XDocument.Load path
-        xd.Descendants <| xName searchedType |> ienumToList
+        xName searchedType
+        |> xd.Descendants 
+        |> ienumToList
 
 let getAttrVal (ls:XAttribute list) = List.map (fun (x:XAttribute) -> x.Value) ls

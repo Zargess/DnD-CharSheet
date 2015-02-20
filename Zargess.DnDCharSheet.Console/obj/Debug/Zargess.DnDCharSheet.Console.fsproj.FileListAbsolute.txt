@@ -20,3 +20,14 @@ C:\Users\MFH\Documents\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Deb
 C:\Users\MFH\Documents\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Debug\FSharp.Core.xml
 C:\Users\MFH\Documents\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\obj\Debug\Zargess.DnDCharSheet.Console.exe
 C:\Users\MFH\Documents\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\obj\Debug\Zargess.DnDCharSheet.Console.pdb
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Debug\Zargess.DnDCharSheet.Console.exe.config
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Debug\Zargess.DnDCharSheet.Console.XML
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Debug\Zargess.DnDCharSheet.Console.exe
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Debug\Zargess.DnDCharSheet.Console.pdb
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Debug\FSharp.Core.dll
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Debug\FSharpx.TypeProviders.Xaml.dll
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Debug\FSharpx.TypeProviders.Xaml.pdb
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Debug\FSharpx.TypeProviders.Xaml.xml
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\bin\Debug\FSharp.Core.xml
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\obj\Debug\Zargess.DnDCharSheet.Console.exe
+D:\GitHub\DnD-CharSheet\Zargess.DnDCharSheet.Console\obj\Debug\Zargess.DnDCharSheet.Console.pdb
