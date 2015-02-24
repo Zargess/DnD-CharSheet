@@ -2,6 +2,7 @@
 open Util
 open Money
 open Items
+open Stats
 
 type Dice = { name:string; quantity:int }
 type Stat = { name:string; score:int; modifier:int }
@@ -21,7 +22,8 @@ let main argv =
     let a = stringToCoins "19p 19g 13s"
     //printfn "%A" a
     //coinsToString a |> stringToCoins |> printfn "%A"
-    let foo = ItemCreator.readItems @"D:\Dropbox\Programmering\knownItems.xml"
-    foo |> printfn "%A"
+    //let foo = ItemCreator.readItems @"D:\Dropbox\Programmering\knownItems.xml"
+    //foo |> printfn "%A"
+    printfn "%A" stats
     Console.ReadLine() |> ignore
     0 // return an integer exit code

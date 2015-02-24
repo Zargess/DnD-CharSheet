@@ -15,3 +15,10 @@ let loadStat path name =
     let q = List.find (fun (x:XAttribute list) -> x.[0].Value = name) element
     let modifier = calcModifier (int q.[1].Value)
     { name=name; score= int q.[1].Value; modifier=modifier; }
+
+let stats =
+    let attributes = getAttributes sheetpath "Stat"
+    let names = findAttributeNames attributes "name"
+    names
+
+let findStat name = ()
