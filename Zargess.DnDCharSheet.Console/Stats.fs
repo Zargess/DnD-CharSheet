@@ -11,7 +11,7 @@ let loadStat path name =
     let element = 
         readFile path "Stat"
         |> List.map (fun (x:XElement) -> x.Attributes() |> ienumToList) 
-        |> ienumToList
+        
     let q = List.find (fun (x:XAttribute list) -> x.[0].Value = name) element
     let modifier = calcModifier (int q.[1].Value)
     { name=name; score= int q.[1].Value; modifier=modifier; }
