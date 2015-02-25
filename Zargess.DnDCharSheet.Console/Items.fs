@@ -6,8 +6,9 @@ open Stats
 open System
 open System.Xml.Linq
 
-type Dice = { name:string; quantity:int }
- 
+type Dice = { sides:int; quantity:int }
+// TODO : COMPLETELY REDO THIS SO IT FITS THE EQUIPMENT LIST AND MAKE THIS MESS CLEANER
+// TODO : NOTE MAKE A SECTION TO HAVE BONUSES IN EVERY ONE OF THEM EXCEPT OTHER
 type Item = 
     | Armor of name:string * description:string * ac:int * weight:int * value:Coin list
     | Weapon of name:string * description:string * dmg:Dice * magic:int * stat:Stat * weight:int * value:Coin list
@@ -15,10 +16,11 @@ type Item =
     | Other of name:string * description:string * weight:int * value:Coin list   
 
 let stringToDice (s:string) =
-    let quan = int(s.[0])
-    let name = s.Remove(1)
-    { name=name; quantity=quan }
-
+    let info = s.Split('d')
+    let quan = int info.[0]
+    let sides = int info.[1]
+    { sides=sides; quantity=quan }
+    
 module ItemCreator =
 
     let saveItem i =
@@ -42,7 +44,7 @@ module ItemCreator =
         let desc = attrs.[2]
         let dmg = stringToDice attrs.[3]
         let magic = int attrs.[4]
-        let stat = loadStat path attrs.[5]
+        let stat = findStat attrs.[5]
         let weight = int attrs.[6]
         let value = stringToCoins attrs.[7]
         Weapon(name,desc,dmg,magic,stat,weight,value)  
@@ -77,5 +79,5 @@ module ItemCreator =
 
     let readItems path =
         let elements = readFile path "Item"
-        let items = List.map (fun (x:XElement) -> x.Attributes() |> ienumToList) elements |> ienumToList
+        let items = List.map (fun (x:XElement) -> x.Attributes() |> ienumToList) elements
         constructItems items []

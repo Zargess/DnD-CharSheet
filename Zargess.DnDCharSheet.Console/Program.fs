@@ -4,6 +4,7 @@ open Money
 open Items
 open Stats
 
+// TODO : CLEAN THE PROJECT FOR THIS MESS
 type Dice = { name:string; quantity:int }
 type Stat = { name:string; score:int; modifier:int }
  
@@ -22,8 +23,9 @@ let main argv =
     let a = stringToCoins "19p 19g 13s"
     //printfn "%A" a
     //coinsToString a |> stringToCoins |> printfn "%A"
-    //let foo = ItemCreator.readItems @"D:\Dropbox\Programmering\knownItems.xml"
-    //foo |> printfn "%A"
-    printfn "%A" stats
+    let foo = ItemCreator.readItems knownitemspath
+    foo |> printfn "%A"
+    //printfn "%A" stats
+    //printfn "%A" (findStat "dex")
     Console.ReadLine() |> ignore
     0 // return an integer exit code

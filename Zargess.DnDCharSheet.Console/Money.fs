@@ -10,6 +10,15 @@ let gold        =       { name="Gold"; key='g'; value=100 }
 let platin      =       { name="Platinum"; key='p'; value=1000 }
 let coinTypes   =       [ copper; silver; electrum; gold; platin ]
 
+let rec generatecoins key count ls =
+    match count with
+        | x when x <= 0 -> ls
+        | _ ->
+            let coin = List.filter (fun x -> x.key = key) coinTypes |> List.head
+            let list = coin::ls
+            let counter = count - 1
+            generatecoins key counter list
+
 let getCoins ls = 
     let last = lastElement ls |> List.head
     let amount =
@@ -17,17 +26,7 @@ let getCoins ls =
         |> List.map (fun x -> string(x)) 
         |> String.concat ""
         |> int
-    printfn "%A" amount
-    let rec coins t count ls =
-        match count with
-        | x when x <= 0 -> ls
-        | _ ->
-            let coin = List.filter (fun x -> x.key = t) coinTypes |> List.head
-            let list = coin::ls
-            let counter = count - 1
-            coins t counter list
-
-    coins last amount []
+    generatecoins last amount []
 
 let stringToCoins (s:string) =
     match s with
@@ -57,3 +56,9 @@ let rec totalValue ls sofar =
     | car::cdr ->
         let v = sofar + car.value
         totalValue cdr v
+
+// TODO : See if this can be done in a better way
+let coparecoinlists owned other =
+    let ownedamount = totalValue owned 0
+    let otheramount = totalValue other 0
+    ownedamount - otheramount
