@@ -7,18 +7,22 @@ type Stat = { name:string; score:int; modifier:int }
 
 let calcModifier score = -5 + score / 2
 
-let loadStat path name =
-    let element = 
-        readFile path "Stat"
-        |> List.map (fun (x:XElement) -> x.Attributes() |> ienumToList) 
-        
-    let q = List.find (fun (x:XAttribute list) -> x.[0].Value = name) element
-    let modifier = calcModifier (int q.[1].Value)
-    { name=name; score= int q.[1].Value; modifier=modifier; }
+let rec createStats list ls =
+    match list with
+    | [] -> ls
+    | head::tail ->
+        let name, value, modifier = head
+        let stat = { name = name; score = value; modifier = modifier }
+        createStats tail (stat::ls)
 
 let stats =
     let attributes = getAttributes sheetpath "Stat"
-    let names = findAttributeNames attributes "name"
-    names
+    let search = findAttributeValues attributes
+    let names = search "name"
+    let values = List.map (fun x -> int x) (search "score")
+    let modifiers = List.map calcModifier values
+    let statlist = List.zip3 names values modifiers
+    List.rev (createStats statlist [])
+
 
 let findStat name = ()

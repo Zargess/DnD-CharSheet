@@ -4,7 +4,7 @@ open System.Xml
 open System.Collections.Generic
 open System.Xml.Linq
 
-let sheetpath = @"C:\Users\Marcus\Dropbox\Programmering\Character.xml"
+let sheetpath = @"D:\Dropbox\Programmering\Character.xml"
 let knownitemspath = @"C:\Users\Marcus\Dropbox\Programmering\knownItems.xml"
 
 let rec lastElement ls =
@@ -29,7 +29,6 @@ let getAttributes path tagname =
     |> List.map (fun x -> x.Attributes() |> ienumToList)
     |> List.concat
 
-// TODO : This does not work
-let findAttributeNames attributes name =
+let findAttributeValues attributes name =
     List.filter (fun (x:XAttribute) -> x.Name.LocalName.Equals(name)) attributes
     |> getAttrVal
