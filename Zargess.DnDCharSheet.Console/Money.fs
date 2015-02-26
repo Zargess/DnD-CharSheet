@@ -58,7 +58,18 @@ let rec totalValue ls sofar =
         totalValue cdr v
 
 // TODO : See if this can be done in a better way
-let coparecoinlists owned other =
+let comparecoinlists owned other =
     let ownedamount = totalValue owned 0
     let otheramount = totalValue other 0
-    ownedamount - otheramount
+    ownedamount >= otheramount
+
+// TODO : Complete this function
+let rec removecoinfromlist list coin =
+    match list with
+    | x::xs when x = coin -> ()
+    | _ -> ()
+
+let (-) (owned:Coin list) (subvalue:Coin list) =
+    let sortedowned = List.sortBy (fun x -> x.value) owned
+    let sortedsubvalue = List.sortBy (fun x -> x.value) subvalue
+    owned
